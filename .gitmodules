@@ -1,0 +1,3 @@
+[submodule "environment/jenkins/gitops"]
+	path = environment/jenkins/gitops
+	url = https://github.com/bak0al3x/jx-gitops
