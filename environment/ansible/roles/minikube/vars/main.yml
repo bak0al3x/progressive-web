@@ -7,7 +7,7 @@ minikube_configmap:
   - { setting: "memory", value: "8192" }
   - { setting: "driver", value: "kvm2" }
   - { setting: "disk-size", value: "40960" }
-  - { setting: "kubernetes-version", value: "1.22.0" }
+  - { setting: "kubernetes-version", value: "1.20.1" }
 minikube_addons:
   - ingress
   - ingress-dns
