@@ -1,6 +1,0 @@
-[submodule "environment/jenkins/--force"]
-	path = environment/jenkins/--force
-	url = https://github.com/bak0al3x/jx-gitops
-[submodule "environment/jenkins/jx-gitops"]
-	path = environment/jenkins/jx-gitops
-	url = https://github.com/bak0al3x/jx-gitops
