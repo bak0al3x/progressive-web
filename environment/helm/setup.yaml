@@ -1,0 +1,5 @@
+---
+  - name: Install Helm on the machine
+    hosts: helm
+    roles:
+      - helm

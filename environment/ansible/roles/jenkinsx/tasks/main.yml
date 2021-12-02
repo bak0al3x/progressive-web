@@ -1,0 +1,26 @@
+---
+  - name: Create temp directory for jx binary
+    ansible.builtin.tempfile:
+      state: directory
+      suffix: jx
+    register: jx_dir
+
+  - name: Download jx binary
+    get_url:
+      url: "https://github.com/jenkins-x/jx/releases/download/{{ jx_version }}/jx-linux-amd64.tar.gz"
+      dest: "{{ jx_dir.path }}/{{ jx_version }}.tar.gz"
+
+  - name: Extract jx binary
+    ansible.builtin.unarchive:
+      src: "{{ jx_dir.path }}/{{ jx_version }}.tar.gz"
+      dest: "{{ jx_dir.path }}/"
+      remote_src: yes
+
+  - name: Move JX binary to path
+    ansible.builtin.copy:
+      src: "{{ jx_dir.path }}/jx"
+      dest: /usr/local/bin/jx
+      mode: '0777'
+      remote_src: yes
+    become: yes
+    become_method: sudo
